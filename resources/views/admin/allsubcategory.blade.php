@@ -25,6 +25,7 @@ Add All Sub Category - Single Ecom
             <th>Actions</th>
           </tr>
         </thead>
+        
         <tbody class="table-border-bottom-0">
           @foreach ($allsubcategories as $subcategory)
             

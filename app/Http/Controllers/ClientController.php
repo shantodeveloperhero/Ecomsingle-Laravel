@@ -122,4 +122,17 @@ class ClientController extends Controller
     public function CustomerService(){
         return view('user_template.customerservice');
     }
+
+    public function search(Request $request)
+    {
+        $products = Product::with('category', 'products')
+               ->where('is_approved', 1)
+                ->where('status', 1)
+                ->where('title', 'like', '%'.$request->input('search').'%')
+                ->latest()
+                ->Paginate(10);
+                $title = 'View Search Result';
+                $sub_title = $request->input('search');
+        return view('user_template.home', compact('category', 'products'));
+    }
 }

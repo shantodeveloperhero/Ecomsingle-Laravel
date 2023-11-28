@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function Index(){
-        $products = Product::latest()->get();
+        $products = Product::paginate(5);
         return view('admin.allproduct', compact('products'));
     }
     public function AddProduct(){
@@ -20,15 +20,17 @@ class ProductController extends Controller
         return view('admin.addproduct', compact('categories', 'subcategories'));
     }
     public function StoreProduct(Request $request){
+        
         $request->validate([
-            'product_name'           => 'required|unique:products',
+            'product_name'           => 'required',
             'price'                  => 'required',
             'quantity'               => 'required',
             'product_short_des'      => 'required',
             'product_long_des'       => 'required',
             'product_category_id'    => 'required',
             'product_subcategory_id' => 'required',
-            'product_img'            => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_img'            => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
          ]);
 
          $image = $request->file('product_img');
@@ -130,3 +132,4 @@ class ProductController extends Controller
     }
 
 }
+

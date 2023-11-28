@@ -42,6 +42,7 @@ Add All Product - Single Ecom
             </td>
           </tr>
           @endforeach
+          {{  $products->links()  }}
         </tbody>
       </table>
     </div>

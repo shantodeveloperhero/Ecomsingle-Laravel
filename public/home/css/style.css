@@ -1,4 +1,4 @@
---------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
 
 @import url(animate.min.css);
@@ -142,7 +142,23 @@ a,
 
 img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
+}
+.footer_design_img{
+    width: 180px !important;
+    padding: 20px 0px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.header_design_img{
+    width: 240px !important;
+    text-align: center;
+    padding: 20px 0px;
+    display: block;
+  margin-left: 180px;
+  margin-right: auto;
 }
 
  :focus {
@@ -289,6 +305,7 @@ button {
 .header_section {
     width: 100%;
     display: flex;
+    padding-bottom: 12px;
 }
 
 .containt_main {
@@ -576,7 +593,16 @@ a:hover {
     padding: 20px;
     box-shadow: 0px 0 30px 10px #f0f0f0;
     margin-bottom: 20px;
+    height: 725px;
+    position: relative;
 }
+
+.products_text{
+    position: absolute;
+    bottom: 82px;
+        left: 0;
+        right: 0;
+    }
 
 .shirt_text {
     width: 100%;
@@ -605,6 +631,11 @@ a:hover {
 .btn_main {
     width: 100%;
     display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .buy_bt {
@@ -645,14 +676,17 @@ a:hover {
     color: #f26522;
 }
 
+#main_slider{
+    position:relative;
+}
 #main_slider a.carousel-control-next {
     right: 615px;
-    top: 105%;
+    top: 102%;
 }
 
 #main_slider a.carousel-control-prev {
     left: 615px;
-    top: 105%;
+    top: 102%;
 }
 
 #main_slider .carousel-control-next,
@@ -817,7 +851,7 @@ a:hover {
 .footer_section {
     width: 100%;
     float: left;
-    background-color: #252525;
+    background:  linear-gradient(90deg, #4b6cb7 0%, #182848 100%);;
     height: auto;
 }
 
@@ -955,3 +989,51 @@ input.mail_bt::placeholder {
 
 
 /* copyright section end */
+
+
+/* media query*/
+@media only screen and (max-width: 1199px) {
+    .box_main {
+        height: 640px;
+       
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .box_main {
+        height: 530px;
+       
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .box_main {
+        height: 470px;
+       
+    }
+
+    .products_text{
+        font-size:10px;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+    .box_main {
+        height: 785px;
+       
+    }
+
+    .products_text{
+        font-size:15px;
+    }
+
+  }
+
+  @media only screen and (max-width: 426px) {
+    .box_main {
+        height: 722px;
+       
+    }
+
+  }

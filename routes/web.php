@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
+use GuzzleHttp\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ Route::middleware(['auth', 'role:user'])->group(function(){
         Route::get('/todays-deal', 'TodaysDeal')->name('todaysdeal');
         Route::get('/customer-service', 'CustomerService')->name('customerservice');
         Route::get('/remove-cart-item/{id}', 'RemoveCartItem')->name('removeitem');
+        Route::get('/search', [ClientController::class, 'search'])->name('frontend.search');
     });
 });
 
